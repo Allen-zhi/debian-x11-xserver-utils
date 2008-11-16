@@ -5,6 +5,8 @@ x11-xserver-utils (7.3+6) UNRELEASED; urgency=low
   * rgb 1.0.3.
   * Update debian/copyright from rgb's COPYING.
   * sessreg 1.0.4.
+  * Add sessreg copyright and license to debian/copyright, from sessreg's
+    COPYING.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 03 Aug 2008 01:26:58 +0200
 
