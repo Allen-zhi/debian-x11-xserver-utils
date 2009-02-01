@@ -1,6 +1,2 @@
 01_sessreg_implement_hostname_hashing.diff -p0
 02_xmodmap_manpage.diff
-03_xrandr-Move-outputs-among-crtcs-as-necessary.-Fixes-14570.patch
-04_xrandr-Fix-for-64bit-feed-a-pointer-to-the-right-size-vari.patch
-05_xrandr-update-the-manpage.patch
-06_xrandr-Manpage-typo-fixes.patch
