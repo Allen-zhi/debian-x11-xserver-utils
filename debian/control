@@ -3,11 +3,11 @@ Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Julien Cristau <jcristau@debian.org>, Brice Goglin <bgoglin@debian.org>
-Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0-1),
- libxaw7-dev (>= 1:1.0.1-1), libxext-dev (>= 1:1.0.0-1),
- libxi-dev (>= 1:1.0.0-3), libxmuu-dev (>= 1:1.0.1-1),
- libxrandr-dev (>= 2:1.2.99.3), libxt-dev (>= 1:1.0.0-1),
- libxtrap-dev (>= 1:1.0.0-1), libxxf86vm-dev (>= 1:1.0.0-1), xbitmaps, quilt,
+Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0),
+ libxaw7-dev (>= 1:1.0.1), libxext-dev (>= 1:1.0.0),
+ libxi-dev (>= 1:1.0.0-3), libxmuu-dev (>= 1:1.0.1),
+ libxrandr-dev (>= 2:1.2.99.3), libxt-dev (>= 1:1.0.0),
+ libxtrap-dev (>= 1:1.0.0), libxxf86vm-dev (>= 1:1.0.0), xbitmaps, quilt,
  x11proto-input-dev (>= 1.4), libxxf86misc-dev
 # Reasons for build-depends:
 # debhelper for the packaging, pkg-config needed by configure scripts
