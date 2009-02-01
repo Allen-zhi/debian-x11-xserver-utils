@@ -15,9 +15,9 @@ Not submitted to XFree86.
 
 Index: sessreg/sessreg.c
 ===================================================================
---- sessreg/sessreg.c.orig	2005-10-18 19:45:25.000000000 -0400
-+++ sessreg/sessreg.c	2005-10-18 21:36:02.000000000 -0400
-@@ -182,6 +182,18 @@
+--- sessreg/sessreg.c.orig
++++ sessreg/sessreg.c
+@@ -96,6 +96,18 @@
  		       const char *host, Time_t date, int addp);
  #endif
  
@@ -36,7 +36,7 @@ Index: sessreg/sessreg.c
  int	wflag, uflag, lflag;
  char	*wtmp_file, *utmp_file, *line;
  #ifdef USE_UTMPX
-@@ -469,21 +481,23 @@
+@@ -384,21 +396,23 @@
  		bzero (u->ut_name, sizeof (u->ut_name));
  #ifdef SYSV
  	if (line) {
@@ -72,7 +72,7 @@ Index: sessreg/sessreg.c
  		bzero (u->ut_id, sizeof (u->ut_id));
  	if (addp) {
  		u->ut_pid = getppid ();
-@@ -722,3 +736,129 @@
+@@ -637,3 +651,129 @@
  		return freeslot;
  }
  #endif
