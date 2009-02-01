@@ -12,6 +12,8 @@ x11-xserver-utils (7.3+6) UNRELEASED; urgency=low
   * Refresh 01_sessreg_implement_hostname_hashing.diff.
   * Bump libxrandr-dev build-dep to 2:1.2.99.3.
   * Drop -1 debian revisions from build-deps to make lintian happy.
+  * Sanitize order of dh_installdeb, dh_shlibdeps and dh_makeshlibs in
+    debian/rules binary-arch (thanks, lintian!).
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 03 Aug 2008 01:26:58 +0200
 
