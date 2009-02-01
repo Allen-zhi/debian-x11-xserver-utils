@@ -7,6 +7,7 @@ x11-xserver-utils (7.3+6) UNRELEASED; urgency=low
   * sessreg 1.0.4.
   * Add sessreg copyright and license to debian/copyright, from sessreg's
     COPYING.
+  * xrandr 1.2.99.4.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 03 Aug 2008 01:26:58 +0200
 
