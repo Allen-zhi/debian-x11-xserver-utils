@@ -1,4 +1,4 @@
-x11-xserver-utils (7.3+6) UNRELEASED; urgency=low
+x11-xserver-utils (7.4+1) experimental; urgency=low
 
   * Add support for parallel=n in DEB_BUILD_OPTIONS, and for actually building
     the apps in parallel.  Install is still sequential, at least for now.
@@ -16,7 +16,7 @@ x11-xserver-utils (7.3+6) UNRELEASED; urgency=low
     debian/rules binary-arch (thanks, lintian!).
   * Add Suggests on nickle and cairo-5c for the new xkeystone script.
 
- -- Julien Cristau <jcristau@debian.org>  Sun, 03 Aug 2008 01:26:58 +0200
+ -- Julien Cristau <jcristau@debian.org>  Sun, 01 Feb 2009 16:06:42 +0100
 
 x11-xserver-utils (7.3+5) unstable; urgency=low
 
