@@ -10,6 +10,7 @@ x11-xserver-utils (7.3+6) UNRELEASED; urgency=low
   * xrandr 1.2.99.4.
   * Drop all xrandr patches (included upstream).
   * Refresh 01_sessreg_implement_hostname_hashing.diff.
+  * Bump libxrandr-dev build-dep to 2:1.2.99.3.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 03 Aug 2008 01:26:58 +0200
 
