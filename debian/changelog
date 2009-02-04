@@ -1,14 +1,9 @@
 x11-xserver-utils (7.3+6) UNRELEASED; urgency=low
 
-  [ Julien Cristau ]
   * Add support for parallel=n in DEB_BUILD_OPTIONS, and for actually building
     the apps in parallel.  Install is still sequential, at least for now.
 
-  [ David Nusinow ]
-  * Add 07_iceauth_manpage_commands.patch for fd.o bug# 2354.
-    closes: #509837
-
- -- David Nusinow <dnusinow@debian.org>  Tue, 03 Feb 2009 21:44:48 -0500
+ -- Julien Cristau <jcristau@debian.org>  Sun, 03 Aug 2008 01:26:58 +0200
 
 x11-xserver-utils (7.3+5) unstable; urgency=low
 
