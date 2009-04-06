@@ -1099,8 +1099,16 @@ get_crtcs (void)
 #endif
 	XRRPanning  *panning_info = NULL;
 
-	if (has_1_3)
+	if (has_1_3) {
+	    XRRPanning zero;
+	    memset(&zero, 0, sizeof(zero));
 	    panning_info = XRRGetPanning  (dpy, res, res->crtcs[c]);
+	    zero.timestamp = panning_info->timestamp;
+	    if (!memcmp(panning_info, &zero, sizeof(zero))) {
+		Xfree(panning_info);
+		panning_info = NULL;
+	    }
+	}
 
 	set_name_xid (&crtcs[c].crtc, res->crtcs[c]);
 	set_name_index (&crtcs[c].crtc, c);
@@ -1620,8 +1628,8 @@ mark_changing_crtcs (void)
 /*
  * Test whether 'crtc' can be used for 'output'
  */
-static Bool
-check_crtc_for_output (crtc_t *crtc, output_t *output, Bool ignore_state)
+Bool
+check_crtc_for_output (crtc_t *crtc, output_t *output)
 {
     int		c;
     int		l;
@@ -1651,9 +1659,6 @@ check_crtc_for_output (crtc_t *crtc, output_t *output, Bool ignore_state)
 	if (l == output->output_info->nclone) 
 	    return False;
     }
-
-    if (ignore_state)
-	return True;
 
     if (crtc->noutput)
     {
@@ -1698,7 +1703,7 @@ find_crtc_for_output (output_t *output)
 	crtc = find_crtc_by_xid (output->output_info->crtcs[c]);
 	if (!crtc) fatal ("cannot find crtc 0x%x\n", output->output_info->crtcs[c]);
 
-	if (check_crtc_for_output (crtc, output, False))
+	if (check_crtc_for_output (crtc, output))
 	    return crtc;
     }
     return NULL;
@@ -1918,7 +1923,7 @@ pick_crtcs_score (output_t *outputs)
 	
 	/* reset crtc allocation for following outputs */
 	disable_outputs (outputs);
-	if (!check_crtc_for_output (crtc, output, True))
+	if (!check_crtc_for_output (crtc, output))
 	    continue;
 	
 	my_score = 1000;
@@ -3220,7 +3225,7 @@ main (int argc, char **argv)
     if (setit && !dryrun) XRRSelectInput (dpy, root,
 			       RRScreenChangeNotifyMask);
     if (setit && !dryrun) status = XRRSetScreenConfigAndRate (dpy, sc,
-						   DefaultRootWindow (dpy), 
+						   root,
 						   (SizeID) size, (Rotation) (rotation | reflection), rate, CurrentTime);
 
     XRRQueryExtension(dpy, &event_base, &error_base);
