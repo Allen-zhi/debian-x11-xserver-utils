@@ -1,9 +1,14 @@
 x11-xserver-utils (7.4+3) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * Update xsetroot config.{guess,sub} for avr32 support (closes: #535715).
   * Add README.source from xsfbs, and bump Standards-Version to 3.8.2.
 
- -- Julien Cristau <jcristau@debian.org>  Sun, 02 Aug 2009 15:52:39 +0200
+  [ Brice Goglin ]
+  * Suggests: xorg-docs-core since some manpages reference it in their
+    SEE ALSO section. Thanks Vincent Lefevre. Closes: #541220.
+
+ -- Brice Goglin <bgoglin@debian.org>  Thu, 20 Aug 2009 09:00:06 +0200
 
 x11-xserver-utils (7.4+2) unstable; urgency=low
 
