@@ -1,4 +1,4 @@
-x11-xserver-utils (7.4+3) UNRELEASED; urgency=low
+x11-xserver-utils (7.5+1) UNRELEASED; urgency=low
 
   [ Julien Cristau ]
   * Update xsetroot config.{guess,sub} for avr32 support (closes: #535715).
@@ -21,7 +21,7 @@ x11-xserver-utils (7.4+3) UNRELEASED; urgency=low
   * Suggests: xorg-docs-core since some manpages reference it in their
     SEE ALSO section. Thanks Vincent Lefevre. Closes: #541220.
 
- -- Brice Goglin <bgoglin@debian.org>  Sun, 06 Dec 2009 13:27:25 +0100
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 06 Dec 2009 13:28:20 +0100
 
 x11-xserver-utils (7.4+2) unstable; urgency=low
 
