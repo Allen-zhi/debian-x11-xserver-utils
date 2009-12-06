@@ -17,10 +17,10 @@ Not submitted to XFree86.
  sessreg/sessreg.c |  164 ++++++++++++++++++++++++++++++++++++++++++++++++++----
  1 file changed, 152 insertions(+), 12 deletions(-)
 
-Index: sessreg/sessreg.c
+Index: a/sessreg/sessreg.c
 ===================================================================
---- sessreg/sessreg.c.orig	2009-12-06 13:02:16.000000000 +0100
-+++ sessreg/sessreg.c	2009-12-06 13:30:49.000000000 +0100
+--- a/sessreg/sessreg.c.orig	2009-12-06 13:02:16.000000000 +0100
++++ b/sessreg/sessreg.c	2009-12-06 13:30:49.000000000 +0100
 @@ -97,6 +97,18 @@
  		       const char *host, Time_t date, int addp);
  #endif
