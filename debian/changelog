@@ -22,6 +22,8 @@ x11-xserver-utils (7.5+1) UNRELEASED; urgency=low
   * xrefresh 1.0.3.
   * xset 1.1.0.
     + Fix some typos in the manpage, closes: #525255.
+    + Avoid warning from "xset r rate" when XF86Misc extension is not present,
+      closes: #526028.
   * xsetroot 1.0.3.
   * Suggests: xorg-docs-core since some manpages reference it in their
     SEE ALSO section. Thanks Vincent Lefevre. Closes: #541220.
