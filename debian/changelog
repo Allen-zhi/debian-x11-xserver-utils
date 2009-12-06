@@ -15,10 +15,12 @@ x11-xserver-utils (7.4+3) UNRELEASED; urgency=low
   * xrandr 1.3.2.
   * xrdb 1.0.6.
   * xrefresh 1.0.3.
+  * xset 1.1.0.
+    + Fix some typos in the manpage, closes: #525255.
   * Suggests: xorg-docs-core since some manpages reference it in their
     SEE ALSO section. Thanks Vincent Lefevre. Closes: #541220.
 
- -- Brice Goglin <bgoglin@debian.org>  Sun, 06 Dec 2009 13:09:29 +0100
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 06 Dec 2009 13:11:58 +0100
 
 x11-xserver-utils (7.4+2) unstable; urgency=low
 
