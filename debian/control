@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0),
  libxaw7-dev (>= 1:1.0.1), libxext-dev (>= 1:1.0.0),
  libxi-dev (>= 1:1.0.0-3), libxmuu-dev (>= 1:1.0.1),
  libxrandr-dev (>= 2:1.2.99.3), libxt-dev (>= 1:1.0.0),
- libxtrap-dev (>= 1:1.0.0), libxxf86vm-dev (>= 1:1.0.0), xbitmaps, quilt,
+ libxxf86vm-dev (>= 1:1.0.0), xbitmaps, quilt,
  x11proto-input-dev (>= 1.4), libxxf86misc-dev
 # Reasons for build-depends:
 # debhelper for the packaging, pkg-config needed by configure scripts
@@ -26,7 +26,6 @@ Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0),
 # xsetpointer: libxi-dev, libx11-dev, x11proto-input-dev (>= 1.4)
 # xsetroot: libxmuu-dev, libx11-dev, xbitmaps
 # xstdcmap: libxmu-dev, libx11-dev
-# xtrap: libx11-dev, libxtrap-dev
 # xvidtune: libxaw7-dev, libxxf86vm-dev, libxt-dev
 Standards-Version: 3.8.2
 XS-Vcs-Git: git://git.debian.org/git/pkg-xorg/app/x11-xserver-utils
@@ -37,10 +36,10 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, cpp
 Pre-Depends: x11-common (>= 1:7.0.0)
 Conflicts: iceauth, sessreg, xgamma, xhost, xmodmap, xrandr, xrdb, xrefresh, xrgb, xset,
- xsetmode, xsetpointer, xsetroot, xstdcmap, xtrap, xvidtune
+ xsetmode, xsetpointer, xsetroot, xstdcmap, xvidtune
 Replaces: xbase-clients (<< 1:7.3), xutils (<< 1:7.2),
  iceauth, sessreg, xgamma, xhost, xmodmap, xrandr, xrdb, xrefresh, xrgb, xset,
- xsetmode, xsetpointer, xsetroot, xstdcmap, xtrap, xvidtune
+ xsetmode, xsetpointer, xsetroot, xstdcmap, xvidtune
 Suggests: nickle, cairo-5c, xorg-docs-core
 Description: X server utilities
  An X client is a program that interfaces with an X server (almost always via
@@ -64,6 +63,4 @@ Description: X server utilities
   - xsetmode and xsetpointer, tools for handling X Input devices;
   - xsetroot, a tool for tailoring the appearance of the root window;
   - xstdcmap, a utility to selectively define standard colormap properties;
-  - xtrapchar, xtrapin, xtrapinfo, xtrapout, xtrapproto, xtrapreset, and
-    xtrapstats, a group of sample clients that use the XTrap extension;
   - xvidtune, a tool for customizing X server modelines for your monitor.

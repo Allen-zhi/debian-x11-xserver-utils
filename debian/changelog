@@ -3,6 +3,7 @@ x11-xserver-utils (7.4+3) UNRELEASED; urgency=low
   [ Julien Cristau ]
   * Update xsetroot config.{guess,sub} for avr32 support (closes: #535715).
   * Add README.source from xsfbs, and bump Standards-Version to 3.8.2.
+  * Remove xtrap (closes: #547547).
 
   [ Brice Goglin ]
   * xrandr 1.3.2.
