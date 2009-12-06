@@ -4,6 +4,8 @@ x11-xserver-utils (7.5+1) UNRELEASED; urgency=low
   * Update xsetroot config.{guess,sub} for avr32 support (closes: #535715).
   * Add README.source from xsfbs, and bump Standards-Version to 3.8.2.
   * Remove xtrap (closes: #547547).
+  * Drop libxxf86misc-dev from Build-Depends.  It's optional for xset, and
+    recent X servers don't support this extension anymore.
 
   [ Brice Goglin ]
   * iceauth 1.0.3.
