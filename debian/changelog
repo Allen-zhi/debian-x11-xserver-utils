@@ -20,8 +20,9 @@ x11-xserver-utils (7.5+1) UNRELEASED; urgency=low
   * xsetroot 1.0.3.
   * Suggests: xorg-docs-core since some manpages reference it in their
     SEE ALSO section. Thanks Vincent Lefevre. Closes: #541220.
+  * Refresh patches.
 
- -- Brice Goglin <bgoglin@debian.org>  Sun, 06 Dec 2009 13:28:20 +0100
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 06 Dec 2009 13:32:48 +0100
 
 x11-xserver-utils (7.4+2) unstable; urgency=low
 

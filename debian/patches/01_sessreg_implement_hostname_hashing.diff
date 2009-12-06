@@ -13,11 +13,15 @@ hash algorithm by Bob Jenkins.
 
 Not submitted to XFree86.
 
+---
+ sessreg/sessreg.c |  164 ++++++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 file changed, 152 insertions(+), 12 deletions(-)
+
 Index: sessreg/sessreg.c
 ===================================================================
---- sessreg/sessreg.c.orig
-+++ sessreg/sessreg.c
-@@ -96,6 +96,18 @@
+--- sessreg/sessreg.c.orig	2009-12-06 13:02:16.000000000 +0100
++++ sessreg/sessreg.c	2009-12-06 13:30:49.000000000 +0100
+@@ -97,6 +97,18 @@
  		       const char *host, Time_t date, int addp);
  #endif
  
@@ -33,10 +37,10 @@ Index: sessreg/sessreg.c
 +
 +#endif
 +
- int	wflag, uflag, lflag;
- char	*wtmp_file, *utmp_file, *line;
+ static int wflag, uflag, lflag;
+ static char *wtmp_file, *utmp_file, *line;
  #ifdef USE_UTMPX
-@@ -384,21 +396,23 @@
+@@ -385,21 +397,23 @@
  		bzero (u->ut_name, sizeof (u->ut_name));
  #ifdef SYSV
  	if (line) {
@@ -72,7 +76,7 @@ Index: sessreg/sessreg.c
  		bzero (u->ut_id, sizeof (u->ut_id));
  	if (addp) {
  		u->ut_pid = getppid ();
-@@ -637,3 +651,129 @@
+@@ -638,3 +652,129 @@
  		return freeslot;
  }
  #endif

@@ -1,12 +1,16 @@
+---
+ xmodmap/xmodmap.man |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 Index: x11-xserver-utils/xmodmap/xmodmap.man
 ===================================================================
---- x11-xserver-utils.orig/xmodmap/xmodmap.man	2007-04-12 00:19:34.000000000 +0200
-+++ x11-xserver-utils/xmodmap/xmodmap.man	2007-08-13 15:13:53.000000000 +0200
+--- x11-xserver-utils.orig/xmodmap/xmodmap.man	2009-05-11 19:11:44.000000000 +0200
++++ x11-xserver-utils/xmodmap/xmodmap.man	2009-12-06 13:32:33.000000000 +0100
 @@ -141,7 +141,7 @@
  used to perform the corresponding set of \fBkeycode\fP expressions.
  The list of keysym names may be
  found in the header file \fI<X11/keysymdef.h>\fP (without the \fIXK_\fP prefix)
--or the keysym database \fI __projectroot__/lib/X11/XKeysymDB\fP.  Note that
+-or the keysym database \fI __X11datadir__/XKeysymDB\fP.  Note that
 +or the keysym database \fI __projectroot__/share/X11/XKeysymDB\fP.  Note that
  if the same keysym is bound to multiple keys, the expression is executed
  for each matching keycode.
