@@ -45,15 +45,15 @@ build-stamp: $(BUILD_STAMPS)
 
 $(STAMP_DIR)/build-%: $(STAMP_DIR)/genscripts $(STAMP_DIR)/patch
 	dh_testdir
-	mkdir -p $*-obj-$(DEB_BUILD_GNU_TYPE)
-	cd $*-obj-$(DEB_BUILD_GNU_TYPE) && \
+	mkdir -p $*-build
+	cd $*-build && \
 	../$*/configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	                --infodir=\$${prefix}/share/info $(confflags) \
 	                --disable-xprint \
 	                CFLAGS="$(CFLAGS)" \
 	                RSH=rsh \
 	                MANCONF="/etc/manpath.config"
-	cd $*-obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE)
+	cd $*-build && $(MAKE)
 	>$@
 
 clean: xsfclean
@@ -65,7 +65,7 @@ clean: xsfclean
 	rm -f */config.cache */config.log */config.status
 	rm -f conftest* */conftest*
 	rm -rf autom4te.cache */autom4te.cache
-	rm -rf *-obj-*
+	rm -rf *-build
 
 	dh_clean
 
@@ -76,7 +76,7 @@ install: build
 	dh_installdirs
 
 	for FILE in $(SUBDIRS); do \
-		cd "$$FILE"-obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install ; \
+		cd "$$FILE"-build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install ; \
 		cd ..; \
 	done
 
