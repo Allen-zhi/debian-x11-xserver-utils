@@ -106,3 +106,10 @@ binary-indep: build install
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install
+
+.PHONY: get-tarballs
+get-tarballs: $(addprefix get-tarball-,$(SUBDIRS))
+
+.PHONY: get-tarball-%
+get-tarball-%:
+	uscan --no-conf --download --no-symlink --destdir . --package $* --upstream-version $(shell awk -F = '/^PACKAGE_VERSION=/ { print $$2 }' < $*/configure || echo 0) --watchfile debian/watch.$* || test $$? = 1
