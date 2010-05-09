@@ -5,6 +5,7 @@ x11-xserver-utils (7.5+2) UNRELEASED; urgency=low
   * Remove myself from Uploaders
   * debian/rules: add get-tarballs rule.
   * xvidtune 1.0.2.
+  * Drop XS- prefix from Vcs-* control fields.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 16 Jan 2010 16:47:13 +0000
 
