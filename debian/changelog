@@ -6,6 +6,7 @@ x11-xserver-utils (7.5+2) UNRELEASED; urgency=low
   * debian/rules: add get-tarballs rule.
   * xvidtune 1.0.2.
   * Drop XS- prefix from Vcs-* control fields.
+  * Drop Pre-Depends on x11-common, only needed for upgrades from sarge.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 16 Jan 2010 16:47:13 +0000
 

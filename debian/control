@@ -34,7 +34,6 @@ Vcs-Browser: http://git.debian.org/?p=pkg-xorg/app/x11-xserver-utils.git
 Package: x11-xserver-utils
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, cpp
-Pre-Depends: x11-common (>= 1:7.0.0)
 Conflicts: iceauth, sessreg, xgamma, xhost, xmodmap, xrandr, xrdb, xrefresh, xrgb, xset,
  xsetmode, xsetpointer, xsetroot, xstdcmap, xvidtune
 Replaces: xbase-clients (<< 1:7.3), xutils (<< 1:7.2),
