@@ -1,6 +1,7 @@
 x11-xserver-utils (7.6~1) UNRELEASED; urgency=low
 
   * New upstream release candidate: X11R7.6 RC1.
+  * iceauth 1.0.4
 
  -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 18:02:37 +0100
 
