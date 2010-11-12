@@ -1,3 +1,11 @@
+x11-xserver-utils (7.6~2) UNRELEASED; urgency=low
+
+  [ David Nusinow ]
+  * Add 03_iceauth_manpage_commands.patch. Documents iceauth commands more
+    fully. Also fixes fd.o bug # 2354. Closes: #509837
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 19:28:04 +0100
+
 x11-xserver-utils (7.6~1) experimental; urgency=low
 
   * New upstream release candidate: X11R7.6 RC1.

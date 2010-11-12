@@ -1,1 +1,2 @@
 01_sessreg_implement_hostname_hashing.diff
+03_iceauth_manpage_commands.patch
