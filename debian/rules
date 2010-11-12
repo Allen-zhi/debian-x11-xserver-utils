@@ -114,6 +114,7 @@ get-tarballs: $(addprefix get-tarball-,$(SUBDIRS))
 get-tarball-%:
 	uscan --no-conf --download --no-symlink --destdir . --package $* --upstream-version $(shell awk -F = '/^PACKAGE_VERSION=/ { print $$2 }' < $*/configure || echo 0) --watchfile debian/watch.$* || test $$? = 1
 
+.PHONY: update-copyright
 update-copyright: $(addsuffix /COPYING, $(SUBDIRS)) debian/copyright.head
 	cp debian/copyright.head debian/copyright
 	for subdir in $(SUBDIRS); do \
