@@ -1,4 +1,4 @@
-x11-xserver-utils (7.6~1) UNRELEASED; urgency=low
+x11-xserver-utils (7.6~1) experimental; urgency=low
 
   * New upstream release candidate: X11R7.6 RC1.
   * iceauth 1.0.4
@@ -20,7 +20,7 @@ x11-xserver-utils (7.6~1) UNRELEASED; urgency=low
   * Bump xutils-dev build-dep for new macros.
   * Switch from --list-missing to --fail-missing for additional safety.
 
- -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 18:02:37 +0100
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 19:16:48 +0100
 
 x11-xserver-utils (7.5+2) unstable; urgency=low
 
