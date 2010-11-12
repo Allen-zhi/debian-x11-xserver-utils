@@ -86,7 +86,7 @@ binary-arch: build install
 	dh_testroot
 
 	dh_installdocs
-	dh_install --sourcedir=debian/tmp -Xrgb.txt --list-missing
+	dh_install --sourcedir=debian/tmp -Xrgb.txt --fail-missing
 	dh_installmenu
 	dh_installchangelogs
 	dh_link
