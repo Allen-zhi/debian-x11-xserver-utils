@@ -8,7 +8,8 @@ Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0),
  libxi-dev (>= 1:1.0.0-3), libxmuu-dev (>= 1:1.0.1),
  libxrandr-dev (>= 2:1.2.99.3), libxt-dev (>= 1:1.0.0),
  libxxf86vm-dev (>= 1:1.0.0), xbitmaps, quilt,
- x11proto-input-dev (>= 1.4)
+ x11proto-input-dev (>= 1.4),
+ xutils-dev (>= 1:7.5+4),
 # Reasons for build-depends:
 # debhelper for the packaging, pkg-config needed by configure scripts
 # Individual apps:

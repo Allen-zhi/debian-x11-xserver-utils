@@ -16,6 +16,7 @@ x11-xserver-utils (7.6~1) UNRELEASED; urgency=low
   * Add an update-copyright target to refresh debian/copyright using
     upstream's COPYING files, thanks to Julien Cristau.
   * Refresh debian/copyright accordingly.
+  * Bump xutils-dev build-dep for new macros.
 
  -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 18:02:37 +0100
 
