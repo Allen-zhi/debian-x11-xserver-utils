@@ -1,2 +1,3 @@
+#git=git://anongit.freedesktop.org/xorg/app/xcmsdb
 version=3
 http://xorg.freedesktop.org/releases/individual/app/ xcmsdb-(.*)\.tar\.gz
