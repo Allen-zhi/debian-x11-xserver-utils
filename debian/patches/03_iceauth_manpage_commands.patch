@@ -1,0 +1,112 @@
+From 3deeff7e94fc6400b8e5d4cfb32a5e95b22318bc Mon Sep 17 00:00:00 2001
+From: David Nusinow <dnusinow@debian.org>
+Date: Tue, 3 Feb 2009 21:35:30 -0500
+Subject: [PATCH] Make iceauth manpage describe commands. (fd.o bug#2354)
+
+---
+ iceauth.man |   86 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 85 insertions(+), 1 deletions(-)
+
+diff --git a/iceauth/iceauth.man b/iceauth/iceauth.man
+index 6a8d32f..c967eb4 100644
+--- a/iceauth/iceauth.man
++++ b/iceauth/iceauth.man
+@@ -1,4 +1,4 @@
+-.\" $Xorg: iceauth.man,v 1.4 2001/02/09 02:05:31 xorgcvs Exp $
++m.\" $Xorg: iceauth.man,v 1.4 2001/02/09 02:05:31 xorgcvs Exp $
+ .\" Copyright 1994, 1998  The Open Group
+ .\" 
+ .\" Permission to use, copy, modify, distribute, and sell this software and its
+@@ -39,5 +39,89 @@ used to extract authorization records from one machine and merge them in on
+ another (as is the case when using remote logins or granting access to
+ other users).  Commands (described below) may be entered interactively,
+ on the \fIiceauth\fP command line, or in scripts.
++.SH OPTIONS
++.PP
++\fB\-f\fP \fIauthfile\fP  Name of the authority file to use. Will default to 
++             the file currently in use by the session.
++.PP
++\fB\-v\fP           Turns on extra messages (verbose mode)
++.PP
++\fB\-q\fP           Turns off extra messages (quiet mode)
++.PP
++\fB\-i\fP           Ignore the locks on the authority file
++.PP
++\fB\-b\fP           Break the locks on the authority file
++.PP
++\fB\-u\fP           Print basic usage instructions
++.PP
++.SH USAGE
++.PP
++When \fIiceauth\fP is run it will allow the following set of commands
++to be entered interactively or in scripts.
++.PP
++\fB?\fP
++.PP
++List available commands.
++.PP
++\fBhelp\fP
++.PP
++Print help information. You may supply a command name to \fIhelp\fP to
++get specific information about it.
++.PP
++\fBinfo\fP
++.PP
++Print information about the entries in the authority file.
++.PP
++\fBlist\fP
++.PP
++List (print) entries in the authority file. You may specify optional
++modifiers as below to specify which entries are listed.  
++.PP
++\fIlist\fP [ \fIprotocol_name\fP ] [ \fIprotocol_data\fP ] [
++\fInetid\fP ] [ \fIauthname\fP ]
++.PP
++\fBadd\fP
++.PP
++Add an entry to the authority file. This must be in the format
++.PP
++\fIadd\fP \fIprotocol_name\fP \fIprotocol_data\fP \fInetid\fP \fIauthname\fP \fIauthdata\fP
++.PP
++\fBremove\fP
++.PP
++Remove entries from the authority file.
++.PP
++\fIremove\fP [ \fIprotocol_name\fP ] [ \fIprotocol_data\fP ] [
++\fInetid\fP ] [ \fIauthname\fP ]
++.PP
++\fBextract\fP
++.PP
++Extract entries from the authority file in to a destination file. You
++must supply the path to the destination to this command as in the
++following format. Optional specifiers allow you to narrow which
++entries are extracted.
++.PP
++\fIextract\fP \fIfilename\fP [ \fIprotocol_name\fP ] [ \fIprotocol_data\fP ]
++[ \fInetid\fP ] [ \fIauthname\fP ]
++.PP
++\fBmerge\fP
++.PP
++Merge entries from other files in to the authority file selected by the program. You may supply any number of file paths to this command as follows:
++.PP
++\fImerge\fP \fIfilename1\fP [ \fIfilename2\fP ] [ \fIfilename3\fP ] ...
++.PP
++\fBexit\fP
++.PP
++Save changes and exit the program.
++.PP
++\fBquit\fP
++.PP
++Abort changes and exit the program without saving.
++.PP
++\fBsource\fP
++.PP
++Read and execute commands from a file.
++.PP
++\fIsource\fP \fIfilename\fP
++.PP
+ .SH AUTHOR
+ Ralph Mor, X Consortium
+-- 
+1.5.6.5
+

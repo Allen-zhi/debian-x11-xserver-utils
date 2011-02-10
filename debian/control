@@ -8,7 +8,9 @@ Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0),
  libxi-dev (>= 1:1.0.0-3), libxmuu-dev (>= 1:1.0.1),
  libxrandr-dev (>= 2:1.2.99.3), libxt-dev (>= 1:1.0.0),
  libxxf86vm-dev (>= 1:1.0.0), xbitmaps, quilt,
- x11proto-input-dev (>= 1.4)
+ x11proto-input-dev (>= 1.4),
+ xutils-dev (>= 1:7.5+4),
+ libxcursor-dev,
 # Reasons for build-depends:
 # debhelper for the packaging, pkg-config needed by configure scripts
 # Individual apps:
@@ -24,7 +26,7 @@ Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0),
 #       (libxxf86misc-dev), (libxfontcache-dev)
 # xsetmode: libxi-dev, libx11-dev
 # xsetpointer: libxi-dev, libx11-dev, x11proto-input-dev (>= 1.4)
-# xsetroot: libxmuu-dev, libx11-dev, xbitmaps
+# xsetroot: libxmuu-dev, libx11-dev, xbitmaps, libxcursor-dev
 # xstdcmap: libxmu-dev, libx11-dev
 # xvidtune: libxaw7-dev, libxxf86vm-dev, libxt-dev
 Standards-Version: 3.8.2

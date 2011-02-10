@@ -86,7 +86,7 @@ binary-arch: build install
 	dh_testroot
 
 	dh_installdocs
-	dh_install --sourcedir=debian/tmp -Xrgb.txt --list-missing
+	dh_install --sourcedir=debian/tmp -Xrgb.txt --fail-missing
 	dh_installmenu
 	dh_installchangelogs
 	dh_link
@@ -113,3 +113,12 @@ get-tarballs: $(addprefix get-tarball-,$(SUBDIRS))
 .PHONY: get-tarball-%
 get-tarball-%:
 	uscan --no-conf --download --no-symlink --destdir . --package $* --upstream-version $(shell awk -F = '/^PACKAGE_VERSION=/ { print $$2 }' < $*/configure || echo 0) --watchfile debian/watch.$* || test $$? = 1
+
+.PHONY: update-copyright
+update-copyright: $(addsuffix /COPYING, $(SUBDIRS)) debian/copyright.head
+	cp debian/copyright.head debian/copyright
+	for subdir in $(SUBDIRS); do \
+		echo >> debian/copyright && \
+		echo $$subdir: >> debian/copyright && \
+		sed -e 's/^./  &/' < $$subdir/COPYING >> debian/copyright \
+	|| exit; done
