@@ -29,7 +29,7 @@ Build-Depends: debhelper (>= 5.0.0), pkg-config, libx11-dev (>= 2:1.0.0),
 # xsetroot: libxmuu-dev, libx11-dev, xbitmaps, libxcursor-dev
 # xstdcmap: libxmu-dev, libx11-dev
 # xvidtune: libxaw7-dev, libxxf86vm-dev, libxt-dev
-Standards-Version: 3.8.2
+Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/pkg-xorg/app/x11-xserver-utils
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/app/x11-xserver-utils.git
 

@@ -11,6 +11,7 @@ x11-xserver-utils (7.6~2) UNRELEASED; urgency=low
   * xrdb 1.0.8.
   * Remove Brice Goglin and David Nusinow from Uploaders.  Thanks for your
     work!
+  * Bump Standards-Version to 3.9.1.
 
  -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 19:28:04 +0100
 
