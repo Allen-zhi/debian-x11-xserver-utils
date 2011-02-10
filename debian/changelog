@@ -7,6 +7,9 @@ x11-xserver-utils (7.6~2) UNRELEASED; urgency=low
   [ Cyril Brulebois ]
   * Make update-copyright target .PHONY
 
+  [ Julien Cristau ]
+  * xrdb 1.0.8.
+
  -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 19:28:04 +0100
 
 x11-xserver-utils (7.6~1) experimental; urgency=low
