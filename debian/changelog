@@ -1,4 +1,4 @@
-x11-xserver-utils (7.6~2) UNRELEASED; urgency=low
+x11-xserver-utils (7.6+1) unstable; urgency=low
 
   [ David Nusinow ]
   * Add 03_iceauth_manpage_commands.patch. Documents iceauth commands more
@@ -13,8 +13,9 @@ x11-xserver-utils (7.6~2) UNRELEASED; urgency=low
     work!
   * Bump Standards-Version to 3.9.1.
   * Refresh patches.
+  * Upload to unstable.
 
- -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 19:28:04 +0100
+ -- Julien Cristau <jcristau@debian.org>  Thu, 10 Feb 2011 18:20:20 +0100
 
 x11-xserver-utils (7.6~1) experimental; urgency=low
 
