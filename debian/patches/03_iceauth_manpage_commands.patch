@@ -7,11 +7,11 @@ Subject: [PATCH] Make iceauth manpage describe commands. (fd.o bug#2354)
  iceauth.man |   86 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
  1 files changed, 85 insertions(+), 1 deletions(-)
 
-diff --git a/iceauth/iceauth.man b/iceauth/iceauth.man
-index 6a8d32f..c967eb4 100644
---- a/iceauth/iceauth.man
-+++ b/iceauth/iceauth.man
-@@ -39,5 +39,89 @@ used to extract authorization records from one machine and merge them in on
+Index: x11-xserver-utils/iceauth/iceauth.man
+===================================================================
+--- x11-xserver-utils.orig/iceauth/iceauth.man
++++ x11-xserver-utils/iceauth/iceauth.man
+@@ -36,5 +36,89 @@ used to extract authorization records fr
  another (as is the case when using remote logins or granting access to
  other users).  Commands (described below) may be entered interactively,
  on the \fIiceauth\fP command line, or in scripts.
@@ -101,6 +101,3 @@ index 6a8d32f..c967eb4 100644
 +.PP
  .SH AUTHOR
  Ralph Mor, X Consortium
--- 
-1.5.6.5
-

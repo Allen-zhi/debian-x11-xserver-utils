@@ -17,11 +17,11 @@ Not submitted to XFree86.
  sessreg/sessreg.c |  164 ++++++++++++++++++++++++++++++++++++++++++++++++++----
  1 file changed, 152 insertions(+), 12 deletions(-)
 
-Index: a/sessreg/sessreg.c
+Index: x11-xserver-utils/sessreg/sessreg.c
 ===================================================================
---- a/sessreg/sessreg.c.orig	2009-12-06 13:02:16.000000000 +0100
-+++ b/sessreg/sessreg.c	2009-12-06 13:30:49.000000000 +0100
-@@ -97,6 +97,18 @@
+--- x11-xserver-utils.orig/sessreg/sessreg.c
++++ x11-xserver-utils/sessreg/sessreg.c
+@@ -93,6 +93,18 @@ static void set_utmpx (struct utmpx *u,
  		       const char *host, Time_t date, int addp);
  #endif
  
@@ -40,7 +40,7 @@ Index: a/sessreg/sessreg.c
  static int wflag, uflag, lflag;
  static char *wtmp_file, *utmp_file, *line;
  #ifdef USE_UTMPX
-@@ -385,21 +397,23 @@
+@@ -404,21 +416,23 @@ set_utmp (struct utmp *u, char *line, ch
  		bzero (u->ut_name, sizeof (u->ut_name));
  #ifdef SYSV
  	if (line) {
@@ -76,7 +76,7 @@ Index: a/sessreg/sessreg.c
  		bzero (u->ut_id, sizeof (u->ut_id));
  	if (addp) {
  		u->ut_pid = getppid ();
-@@ -638,3 +652,129 @@
+@@ -662,3 +676,129 @@ findslot (char *line_name, char *host_na
  		return freeslot;
  }
  #endif

@@ -12,6 +12,7 @@ x11-xserver-utils (7.6~2) UNRELEASED; urgency=low
   * Remove Brice Goglin and David Nusinow from Uploaders.  Thanks for your
     work!
   * Bump Standards-Version to 3.9.1.
+  * Refresh patches.
 
  -- Cyril Brulebois <kibi@debian.org>  Fri, 12 Nov 2010 19:28:04 +0100
 
