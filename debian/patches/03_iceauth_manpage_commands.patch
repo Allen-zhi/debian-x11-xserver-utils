@@ -11,12 +11,6 @@ diff --git a/iceauth/iceauth.man b/iceauth/iceauth.man
 index 6a8d32f..c967eb4 100644
 --- a/iceauth/iceauth.man
 +++ b/iceauth/iceauth.man
-@@ -1,4 +1,4 @@
--.\" $Xorg: iceauth.man,v 1.4 2001/02/09 02:05:31 xorgcvs Exp $
-+m.\" $Xorg: iceauth.man,v 1.4 2001/02/09 02:05:31 xorgcvs Exp $
- .\" Copyright 1994, 1998  The Open Group
- .\" 
- .\" Permission to use, copy, modify, distribute, and sell this software and its
 @@ -39,5 +39,89 @@ used to extract authorization records from one machine and merge them in on
  another (as is the case when using remote logins or granting access to
  other users).  Commands (described below) may be entered interactively,
