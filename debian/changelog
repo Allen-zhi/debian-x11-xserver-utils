@@ -1,11 +1,11 @@
-x11-xserver-utils (7.6+3) UNRELEASED; urgency=low
+x11-xserver-utils (7.6+3) unstable; urgency=low
 
   * iceauth 1.0.5
   * Drop 03_iceauth_manpage_commands.patch (merged upstream).
   * xrandr 1.3.5
   * Bump Standards-Version to 3.9.2 (no changes).
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 04 Jun 2011 01:10:31 +0200
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Jul 2011 19:55:25 +0200
 
 x11-xserver-utils (7.6+2) unstable; urgency=high
 
