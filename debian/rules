@@ -49,7 +49,6 @@ $(STAMP_DIR)/build-%: $(STAMP_DIR)/genscripts $(STAMP_DIR)/patch
 	cd $*-build && \
 	../$*/configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	                --infodir=\$${prefix}/share/info $(confflags) \
-	                --disable-xprint \
 	                CFLAGS="$(CFLAGS)" \
 	                RSH=rsh \
 	                MANCONF="/etc/manpath.config"

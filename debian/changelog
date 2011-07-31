@@ -2,6 +2,7 @@ x11-xserver-utils (7.6+4) UNRELEASED; urgency=low
 
   * xset 1.2.2
     + add build-dep on x11proto-core-dev 7.0.17
+  * Drop --disable-xprint from configure flags, it's not used anywhere.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 31 Jul 2011 14:31:05 +0200
 
