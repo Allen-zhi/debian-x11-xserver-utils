@@ -18,12 +18,11 @@ DEF_SUBDIRS=iceauth rgb sessreg xcmsdb xgamma xhost xmodmap xrandr xrdb xrefresh
 SUBDIRS=$(DEF_SUBDIRS)
 BUILD_STAMPS = $(addprefix $(STAMP_DIR)/build-,$(SUBDIRS))
 
-CFLAGS = -Wall -g
-ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
+CFLAGS = `dpkg-buildflags --get CFLAGS`
+CFLAGS += -Wall
+LDFLAGS = `dpkg-buildflags --get LDFLAGS`
+CPPFLAGS = `dpkg-buildflags --get CPPFLAGS`
+
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	MAKEFLAGS += -j$(NUMJOBS)
@@ -49,7 +48,7 @@ $(STAMP_DIR)/build-%: $(STAMP_DIR)/genscripts $(STAMP_DIR)/patch
 	cd $*-build && \
 	../$*/configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	                --infodir=\$${prefix}/share/info $(confflags) \
-	                CFLAGS="$(CFLAGS)" \
+	                CFLAGS="$(CFLAGS)" CPPFLAGS="$(CPPFLAGS)" LDFLAGS="$(LDFLAGS)" \
 	                RSH=rsh \
 	                MANCONF="/etc/manpath.config"
 	cd $*-build && $(MAKE)
