@@ -9,6 +9,7 @@ x11-xserver-utils (7.6+4) UNRELEASED; urgency=low
   * sessreg 1.0.7.
   * xcmsdb 1.0.4.
   * xgamma 1.0.5.
+  * xhost 1.0.5.
 
   [ Moritz Muehlenhoff ]
   * Enable hardened build flags (closes: #655503)
