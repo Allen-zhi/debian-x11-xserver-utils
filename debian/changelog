@@ -7,6 +7,7 @@ x11-xserver-utils (7.6+4) UNRELEASED; urgency=low
   * Stop passing RSH and MANCONF to configure.  The former was only needed by
     xsm, the latter by xman, before the xbase-clients split.
   * sessreg 1.0.7.
+  * xcmsdb 1.0.4.
 
   [ Moritz Muehlenhoff ]
   * Enable hardened build flags (closes: #655503)
