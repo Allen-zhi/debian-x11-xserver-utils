@@ -21,11 +21,11 @@ Index: x11-xserver-utils/sessreg/sessreg.c
 ===================================================================
 --- x11-xserver-utils.orig/sessreg/sessreg.c
 +++ x11-xserver-utils/sessreg/sessreg.c
-@@ -93,6 +93,18 @@ static void set_utmpx (struct utmpx *u,
- 		       const char *host, Time_t date, int addp);
+@@ -88,6 +88,18 @@ static void set_utmpx (struct utmpx *u,
+ 		       const char *host, time_t date, int addp);
  #endif
  
-+#ifdef SYSV
++#ifdef HAVE_STRUCT_UTMP_UT_ID
 +/* used for hashing ut_id */
 +typedef  unsigned long  int  ub4;   /* unsigned 4-byte quantities */
 +typedef  unsigned       char ub1;   /* unsigned 1-byte quantities */
@@ -38,11 +38,11 @@ Index: x11-xserver-utils/sessreg/sessreg.c
 +#endif
 +
  static int wflag, uflag, lflag;
- static char *wtmp_file, *utmp_file, *line;
- #ifdef USE_UTMPX
-@@ -404,21 +416,23 @@ set_utmp (struct utmp *u, char *line, ch
- 		bzero (u->ut_name, sizeof (u->ut_name));
- #ifdef SYSV
+ static const char *wtmp_file, *utmp_file;
+ static char *line;
+@@ -397,21 +409,23 @@ set_utmp (struct utmp *u, char *line, ch
+ 		memset (u->ut_name, 0, sizeof (u->ut_name));
+ #ifdef HAVE_STRUCT_UTMP_UT_ID
  	if (line) {
 -		int	i;
  		/*
@@ -73,15 +73,15 @@ Index: x11-xserver-utils/sessreg/sessreg.c
 +		 * utmp entries and and potential security holes.
 +		 */
 +		/* TODO: CHECK this  */
- 		bzero (u->ut_id, sizeof (u->ut_id));
- 	if (addp) {
- 		u->ut_pid = getppid ();
-@@ -662,3 +676,129 @@ findslot (char *line_name, char *host_na
+ 		memset (u->ut_id, 0, sizeof (u->ut_id));
+ #endif
+ #ifdef HAVE_STRUCT_UTMP_UT_PID
+@@ -660,3 +674,129 @@ findslot (char *line_name, char *host_na
  		return freeslot;
  }
  #endif
 +
-+#ifdef SYSV
++#ifdef HAVE_STRUCT_UTMP_UT_ID
 +/*
 +--------------------------------------------------------------------
 +mix -- mix 3 32-bit values reversibly.
