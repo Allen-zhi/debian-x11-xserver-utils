@@ -11,6 +11,7 @@ x11-xserver-utils (7.6+4) UNRELEASED; urgency=low
   * xgamma 1.0.5.
   * xhost 1.0.5.
   * xmodmap 1.0.7.
+  * Don't use dh_testroot in debian/rules clean.
 
   [ Moritz Muehlenhoff ]
   * Enable hardened build flags (closes: #655503)
