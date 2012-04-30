@@ -13,6 +13,8 @@ x11-xserver-utils (7.6+4) UNRELEASED; urgency=low
   * xmodmap 1.0.7.
   * Don't use dh_testroot in debian/rules clean.
   * Rediff 01_sessreg_implement_hostname_hashing.diff.
+  * 02_xmodmap-include-config.h-before-system-headers.diff: patch from
+    upstream git to fix a build failure.
 
   [ Moritz Muehlenhoff ]
   * Enable hardened build flags (closes: #655503)
