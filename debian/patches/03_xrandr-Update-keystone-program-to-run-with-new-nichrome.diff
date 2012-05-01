@@ -1,0 +1,76 @@
+From 8ca08e32ee7daae75992cbf1f554ca9a389e5420 Mon Sep 17 00:00:00 2001
+From: Keith Packard <keithp@keithp.com>
+Date: Wed, 29 Feb 2012 16:26:25 +1300
+Subject: [PATCH] Update keystone program to run with new nichrome bits
+
+Will also work with old nichrome bits.
+
+Signed-off-by: Keith Packard <keithp@keithp.com>
+---
+ keystone.5c |   15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/xrandr/keystone.5c b/xrandr/keystone.5c
+index 228c020..c616f12 100644
+--- a/xrandr/keystone.5c
++++ b/xrandr/keystone.5c
+@@ -37,7 +37,7 @@ extend namespace Nichrome {
+ 	    rgba_color_t    corner_color;
+ 	    bool	    down;
+ 	    bool	    started;
+-	    int		    active;
++	    int		    active_corner;
+ 	    void(&quad_t)   callback;
+ 	} quad_t;
+ 
+@@ -49,6 +49,10 @@ extend namespace Nichrome {
+ 	    }
+ 	}
+ 
++	protected void natural (cairo_t cr, &quad_t quad) {
++	    rectangle (cr, 0, 0, 256, 256);
++	}
++
+ 	void text_at (cairo_t cr, point_t p, string text) {
+ 	    text_extents_t  e = text_extents (cr, text);
+ 	    p.x = p.x - e.width / 2 - e.x_bearing;
+@@ -102,7 +106,7 @@ extend namespace Nichrome {
+ 	    enum switch (event.type) {
+ 	    case press:
+ 		quad.down = true;
+-		quad.active = nearest (&quad, event);
++		quad.active_corner = nearest (&quad, event);
+ 		break;
+ 	    case release:
+ 		quad.down = false;
+@@ -116,8 +120,8 @@ extend namespace Nichrome {
+ 	    if (quad.down) {
+ 		motion.x = max (0, min (quad.geometry.width, motion.x));
+ 		motion.y = max (0, min (quad.geometry.height, motion.y));
+-		quad.p[quad.active].x = motion.x;
+-		quad.p[quad.active].y = motion.y;
++		quad.p[quad.active_corner].x = motion.x;
++		quad.p[quad.active_corner].y = motion.y;
+ 		quad.callback (&quad);
+ 		Widget::reoutline (&quad);
+ 		Widget::redraw (&quad);
+@@ -149,6 +153,7 @@ extend namespace Nichrome {
+ 	    quad.button = button;
+ 	    quad.motion = motion;
+ 	    quad.configure = configure;
++	    quad.natural = natural;
+ 	    quad.p = (point_t[4]) {
+ 		{ x = 0, y = 0 } ...
+ 	    };
+@@ -161,7 +166,7 @@ extend namespace Nichrome {
+ 	    };
+ 	    quad.corner_diameter = 20;
+ 	    quad.down = false;
+-	    quad.active = -1;
++	    quad.active_corner = -1;
+ 	    quad.callback = callback;
+ 	    quad.started = false;
+ 	}
+-- 
+1.7.10
+
