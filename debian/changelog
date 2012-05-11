@@ -1,9 +1,9 @@
-x11-xserver-utils (7.7~3) UNRELEASED; urgency=low
+x11-xserver-utils (7.7~3) unstable; urgency=low
 
   * xrandr: keystone.5c: cairo-5 box semantics changed default layout (allows
     to work with new cairo-5c)
 
- -- Julien Cristau <jcristau@debian.org>  Fri, 11 May 2012 22:52:04 +0200
+ -- Julien Cristau <jcristau@debian.org>  Fri, 11 May 2012 22:58:40 +0200
 
 x11-xserver-utils (7.7~2) unstable; urgency=low
 
