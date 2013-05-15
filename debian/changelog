@@ -3,6 +3,7 @@ x11-xserver-utils (7.7-1) UNRELEASED; urgency=low
   * New upstream releases:
   * xrandr 1.4.0
     - Drop upstream patches.
+  * rgb 1.0.5
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 15 May 2013 12:08:34 -0400
 
