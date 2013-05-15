@@ -1,3 +1,10 @@
+x11-xserver-utils (7.7-1) UNRELEASED; urgency=low
+
+  * New upstream releases:
+  * xrandr 1.4.0
+
+ -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 15 May 2013 12:08:34 -0400
+
 x11-xserver-utils (7.7~3) unstable; urgency=low
 
   * xrandr: keystone.5c: cairo-5 box semantics changed default layout (allows
