@@ -1,4 +1,2 @@
 01_sessreg_implement_hostname_hashing.diff
 02_xmodmap-include-config.h-before-system-headers.diff
-03_xrandr-Update-keystone-program-to-run-with-new-nichrome.diff
-04_xrandr-keystone.5c-cairo-5-box-semantics-changed-default-la.diff
