@@ -1,5 +1,6 @@
 x11-xserver-utils (7.7-1) UNRELEASED; urgency=low
 
+  [ Robert Hooker ]
   * New upstream releases:
   * xrandr 1.4.0
     - Drop upstream patches.
@@ -7,6 +8,9 @@ x11-xserver-utils (7.7-1) UNRELEASED; urgency=low
   * xsetroot 1.1.1
   * xstdcmap 1.0.3
   * xvidtune 1.0.3
+
+  [ Timo Aaltonen ]
+  * control: Bump libxrandr-dev build-dependency.
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 15 May 2013 12:08:34 -0400
 

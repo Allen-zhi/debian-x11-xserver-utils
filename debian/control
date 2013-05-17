@@ -12,7 +12,7 @@ Build-Depends:
  libxext-dev (>= 1:1.0.0),
  libxi-dev (>= 1:1.0.0-3),
  libxmuu-dev (>= 1:1.0.1),
- libxrandr-dev (>= 2:1.2.99.3),
+ libxrandr-dev (>= 2:1.4.0),
  libxt-dev (>= 1:1.0.0),
  libxxf86vm-dev (>= 1:1.0.0),
  xbitmaps,
@@ -28,7 +28,7 @@ Build-Depends:
 # xgamma: libx11-dev, libxxf86vm-dev
 # xhost: libx11-dev, libxmuu-dev, libxau-dev
 # xmodmap: libx11-dev
-# xrandr: libxrandr-dev (>= 2:1.2.0), libxrender, libx11
+# xrandr: libxrandr-dev (>= 2:1.4.0), libxrender, libx11
 # xrdb: libxmuu-dev, libx11-dev
 # xrefresh: libx11-dev
 # xset: x11proto-core-dev (>= 7.0.17), libxmuu-dev, libx11-dev, libxext-dev,
