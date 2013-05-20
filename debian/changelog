@@ -9,6 +9,7 @@ x11-xserver-utils (7.7+1) UNRELEASED; urgency=low
   * xstdcmap 1.0.3
   * xvidtune 1.0.3
   * xrefresh 1.0.5
+  * Update copyright
 
   [ Timo Aaltonen ]
   * control: Bump libxrandr-dev build-dependency.
