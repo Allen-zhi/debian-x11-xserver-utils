@@ -11,6 +11,7 @@ x11-xserver-utils (7.7+1) UNRELEASED; urgency=low
   * xrefresh 1.0.5
   * xhost 1.0.6
   * iceauth 1.0.6
+  * xset 1.2.3
   * Update copyright
 
   [ Timo Aaltonen ]
