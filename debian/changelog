@@ -19,8 +19,13 @@ x11-xserver-utils (7.7+1) UNRELEASED; urgency=low
 
   [ Julien Cristau ]
   * sessreg 1.0.8.
-  * xmodmap 1.0.8.
-  * xrdb 1.1.0.
+  * xmodmap 1.0.8
+    - fixes error in manpage example about swapping Control_L/Caps_Lock keys
+      (closes: #641588)
+  * xrdb 1.1.0
+    - Clarify .Xresources vs. .Xdefaults in man page (closes: #649187)
+    - Ensure we don't read out of ClassName array bounds for unknown visual
+      type (closes: #488535)
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 15 May 2013 12:08:34 -0400
 
