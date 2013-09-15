@@ -39,12 +39,12 @@ Index: x11-xserver-utils/sessreg/sessreg.c
 +
  static int wflag, uflag, lflag;
  static const char *wtmp_file, *utmp_file;
- static char *line;
-@@ -397,21 +409,23 @@ set_utmp (struct utmp *u, char *line, ch
+ #ifdef USE_UTMPX
+@@ -399,21 +411,23 @@ set_utmp (struct utmp *u, char *line, ch
  		memset (u->ut_name, 0, sizeof (u->ut_name));
  #ifdef HAVE_STRUCT_UTMP_UT_ID
  	if (line) {
--		int	i;
+-		size_t	i;
  		/*
 -		 * this is a bit crufty, but
 -		 * follows the apparent conventions in
@@ -76,7 +76,7 @@ Index: x11-xserver-utils/sessreg/sessreg.c
  		memset (u->ut_id, 0, sizeof (u->ut_id));
  #endif
  #ifdef HAVE_STRUCT_UTMP_UT_PID
-@@ -660,3 +674,129 @@ findslot (char *line_name, char *host_na
+@@ -662,3 +676,129 @@ findslot (char *line_name, char *host_na
  		return freeslot;
  }
  #endif

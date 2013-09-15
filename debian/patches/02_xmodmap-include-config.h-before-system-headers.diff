@@ -13,13 +13,13 @@ Reviewed-by: Peter Hutterer <peter.hutterer@who-t.net>
  xmodmap.c |    4 ++++
  3 files changed, 12 insertions(+)
 
-diff --git a/xmodmap/exec.c b/xmodmap/exec.c
-index dbcb669..419b10e 100644
---- a/xmodmap/exec.c
-+++ b/xmodmap/exec.c
-@@ -54,6 +54,10 @@ from The Open Group.
-  * original xmodmap, written by David Rosenthal, of Sun Microsystems.
-  */
+Index: x11-xserver-utils/xmodmap/exec.c
+===================================================================
+--- x11-xserver-utils.orig/xmodmap/exec.c
++++ x11-xserver-utils/xmodmap/exec.c
+@@ -62,6 +62,10 @@ from The Open Group.
+ #include <X11/Xwindows.h>
+ #endif
  
 +#ifdef HAVE_CONFIG_H
 +# include "config.h"
@@ -28,28 +28,13 @@ index dbcb669..419b10e 100644
  #include <X11/Xos.h>
  #include <X11/Xlib.h>
  #include <stdio.h>
-diff --git a/xmodmap/pf.c b/xmodmap/pf.c
-index 0eb0f55..3f0c3f4 100644
---- a/xmodmap/pf.c
-+++ b/xmodmap/pf.c
-@@ -26,6 +26,10 @@ from The Open Group.
- 
- */
- 
-+#ifdef HAVE_CONFIG_H
-+# include "config.h"
-+#endif
-+
- #include <X11/Xos.h>
- #include <X11/Xlib.h>
- #include <stdio.h>
-diff --git a/xmodmap/xmodmap.c b/xmodmap/xmodmap.c
-index 58a8e70..0f89629 100644
---- a/xmodmap/xmodmap.c
-+++ b/xmodmap/xmodmap.c
-@@ -26,6 +26,10 @@ from The Open Group.
- 
- */
+Index: x11-xserver-utils/xmodmap/pf.c
+===================================================================
+--- x11-xserver-utils.orig/xmodmap/pf.c
++++ x11-xserver-utils/xmodmap/pf.c
+@@ -30,6 +30,10 @@ from The Open Group.
+ # include "config.h"
+ #endif
  
 +#ifdef HAVE_CONFIG_H
 +# include "config.h"
@@ -58,6 +43,18 @@ index 58a8e70..0f89629 100644
  #include <X11/Xos.h>
  #include <X11/Xlib.h>
  #include <stdio.h>
--- 
-1.7.10
-
+Index: x11-xserver-utils/xmodmap/xmodmap.c
+===================================================================
+--- x11-xserver-utils.orig/xmodmap/xmodmap.c
++++ x11-xserver-utils/xmodmap/xmodmap.c
+@@ -30,6 +30,10 @@ from The Open Group.
+ # include "config.h"
+ #endif
+ 
++#ifdef HAVE_CONFIG_H
++# include "config.h"
++#endif
++
+ #include <X11/Xos.h>
+ #include <X11/Xlib.h>
+ #include <stdio.h>
