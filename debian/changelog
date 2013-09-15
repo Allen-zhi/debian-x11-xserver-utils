@@ -20,6 +20,7 @@ x11-xserver-utils (7.7+1) UNRELEASED; urgency=low
   [ Julien Cristau ]
   * sessreg 1.0.8.
   * xmodmap 1.0.8.
+  * xrdb 1.1.0.
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 15 May 2013 12:08:34 -0400
 
