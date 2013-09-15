@@ -48,6 +48,7 @@ $(STAMP_DIR)/build-%: $(STAMP_DIR)/genscripts $(STAMP_DIR)/patch
 	cd $*-build && \
 	../$*/configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	                --infodir=\$${prefix}/share/info $(confflags) \
+			--disable-silent-rules \
 	                CFLAGS="$(CFLAGS)" \
 			CPPFLAGS="$(CPPFLAGS)" \
 			LDFLAGS="$(LDFLAGS)"

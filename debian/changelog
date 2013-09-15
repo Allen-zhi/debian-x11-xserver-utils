@@ -27,6 +27,7 @@ x11-xserver-utils (7.7+1) UNRELEASED; urgency=low
     - Ensure we don't read out of ClassName array bounds for unknown visual
       type (closes: #488535)
   * Update/refresh patches.
+  * Disable silent build rules.
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 15 May 2013 12:08:34 -0400
 
