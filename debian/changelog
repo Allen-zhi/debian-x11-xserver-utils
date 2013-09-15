@@ -1,4 +1,4 @@
-x11-xserver-utils (7.7+1) UNRELEASED; urgency=low
+x11-xserver-utils (7.7+1) unstable; urgency=low
 
   [ Robert Hooker ]
   * New upstream releases:
@@ -29,7 +29,7 @@ x11-xserver-utils (7.7+1) UNRELEASED; urgency=low
   * Update/refresh patches.
   * Disable silent build rules.
 
- -- Robert Hooker <sarvatt@ubuntu.com>  Wed, 15 May 2013 12:08:34 -0400
+ -- Julien Cristau <jcristau@debian.org>  Sun, 15 Sep 2013 20:00:22 +0200
 
 x11-xserver-utils (7.7~3) unstable; urgency=low
 
