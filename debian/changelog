@@ -1,3 +1,9 @@
+x11-xserver-utils (7.7+2) UNRELEASED; urgency=medium
+
+  * Remove Cyril Brulebois from Uploaders.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 18 Jan 2014 20:27:01 +0100
+
 x11-xserver-utils (7.7+1) unstable; urgency=low
 
   [ Robert Hooker ]
