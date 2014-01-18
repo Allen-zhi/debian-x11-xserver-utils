@@ -16,6 +16,7 @@ include debian/xsfbs/xsfbs.mk
 # subdirectory explicitly so that the build system knows what to build
 DEF_SUBDIRS=iceauth rgb sessreg xcmsdb xgamma xhost xmodmap xrandr xrdb xrefresh xset xsetmode xsetpointer xsetroot xstdcmap xvidtune
 SUBDIRS=$(DEF_SUBDIRS)
+CONFIG_STAMPS = $(addprefix $(STAMP_DIR)/configure-, $(SUBDIRS))
 BUILD_STAMPS = $(addprefix $(STAMP_DIR)/build-,$(SUBDIRS))
 
 CFLAGS = `dpkg-buildflags --get CFLAGS`
@@ -23,85 +24,47 @@ CFLAGS += -Wall
 LDFLAGS = `dpkg-buildflags --get LDFLAGS`
 CPPFLAGS = `dpkg-buildflags --get CPPFLAGS`
 
-ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-	MAKEFLAGS += -j$(NUMJOBS)
-endif
+%:
+	dh $@ --with autoreconf,quilt --parallel
 
-DEB_HOST_ARCH      ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
-ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
-	confflags += --build=$(DEB_HOST_GNU_TYPE)
-else
-	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
-endif
+debian/autoreconf:
+	echo $(SUBDIRS) > $@
 
+override_dh_autoreconf: debian/autoreconf
+	dh_autoreconf
 
-build: build-stamp
-build-stamp: $(BUILD_STAMPS)
+override_dh_auto_configure: $(CONFIG_STAMPS)
+
+$(STAMP_DIR)/configure-%:
+	mkdir -p $(STAMP_DIR)
+	dh_auto_configure -D$* -B$*-build -- \
+		--disable-silent-rules \
+		CFLAGS="$(CFLAGS)" \
+		CPPFLAGS="$(CPPFLAGS)" \
+		LDFLAGS="$(LDFLAGS)"
 	>$@
 
-$(STAMP_DIR)/build-%: $(STAMP_DIR)/genscripts $(STAMP_DIR)/patch
-	dh_testdir
-	mkdir -p $*-build
-	cd $*-build && \
-	../$*/configure --prefix=/usr --mandir=\$${prefix}/share/man \
-	                --infodir=\$${prefix}/share/info $(confflags) \
-			--disable-silent-rules \
-	                CFLAGS="$(CFLAGS)" \
-			CPPFLAGS="$(CPPFLAGS)" \
-			LDFLAGS="$(LDFLAGS)"
-	cd $*-build && $(MAKE)
+override_dh_auto_build: $(BUILD_STAMPS)
+
+$(STAMP_DIR)/build-%:
+	mkdir -p $(STAMP_DIR)
+	dh_auto_build -D$* -B$*-build
 	>$@
 
-clean: xsfclean
-	dh_testdir
-	rm -f build-stamp
-	rm -f config.cache config.log config.status
-	rm -f */config.cache */config.log */config.status
-	rm -f conftest* */conftest*
-	rm -rf autom4te.cache */autom4te.cache
-	rm -rf *-build
-	dh_clean
+override_dh_auto_clean: $(addprefix clean-, $(SUBDIRS))
+	rm -rf $(STAMP_DIR)
 
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-	dh_installdirs
+clean-%:
+	dh_auto_clean -D$* -B$*-build
 
+override_dh_auto_install:
 	for FILE in $(SUBDIRS); do \
 		cd "$$FILE"-build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install ; \
 		cd ..; \
 	done
 
-# Build architecture-dependent files here.
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-
-	dh_installdocs
-	dh_install --sourcedir=debian/tmp -Xrgb.txt --fail-missing
-	dh_installmenu
-	dh_installchangelogs
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_makeshlibs
-	dh_shlibdeps
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-# Build architecture-independent files here.
-binary-indep: build install
-# Nothing to do
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+override_dh_install:
+	dh_install -Xrgb.txt --fail-missing
 
 .PHONY: get-tarballs
 get-tarballs: $(addprefix get-tarball-,$(SUBDIRS))
