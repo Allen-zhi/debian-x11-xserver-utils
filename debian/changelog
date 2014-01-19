@@ -1,10 +1,10 @@
-x11-xserver-utils (7.7+2) UNRELEASED; urgency=medium
+x11-xserver-utils (7.7+2) unstable; urgency=medium
 
   * Remove Cyril Brulebois from Uploaders.
   * Bump to debhelper compat level 7 and use dh with the autoreconf addon.
     Should make arm64 happy and closes: #735489.  Thanks, Wookey!
 
- -- Julien Cristau <jcristau@debian.org>  Sat, 18 Jan 2014 20:27:01 +0100
+ -- Julien Cristau <jcristau@debian.org>  Sun, 19 Jan 2014 09:38:17 +0100
 
 x11-xserver-utils (7.7+1) unstable; urgency=low
 
