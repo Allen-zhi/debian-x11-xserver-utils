@@ -1,3 +1,10 @@
+x11-xserver-utils (7.7+3) UNRELEASED; urgency=medium
+
+  * xrandr 1.4.2
+    - Use more decimal places when printing various rates (closes: #736224)
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 13 Jul 2014 15:32:08 +0200
+
 x11-xserver-utils (7.7+2) unstable; urgency=medium
 
   * Remove Cyril Brulebois from Uploaders.
