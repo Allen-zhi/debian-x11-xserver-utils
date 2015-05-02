@@ -10,6 +10,7 @@ x11-xserver-utils (7.7+4) UNRELEASED; urgency=medium
   * xmodmap 1.0.9.
   * xrandr 1.4.3.
   * Bump x11proto-core-dev build-dep to 7.0.25.
+  * Bump debhelper compat level to 9.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 02 May 2015 18:30:26 +0200
 

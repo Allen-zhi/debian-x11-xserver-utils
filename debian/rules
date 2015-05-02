@@ -19,11 +19,6 @@ SUBDIRS=$(DEF_SUBDIRS)
 CONFIG_STAMPS = $(addprefix $(STAMP_DIR)/configure-, $(SUBDIRS))
 BUILD_STAMPS = $(addprefix $(STAMP_DIR)/build-,$(SUBDIRS))
 
-CFLAGS = `dpkg-buildflags --get CFLAGS`
-CFLAGS += -Wall
-LDFLAGS = `dpkg-buildflags --get LDFLAGS`
-CPPFLAGS = `dpkg-buildflags --get CPPFLAGS`
-
 %:
 	dh $@ --with autoreconf,quilt --parallel
 
@@ -38,10 +33,7 @@ override_dh_auto_configure: $(CONFIG_STAMPS)
 $(STAMP_DIR)/configure-%:
 	mkdir -p $(STAMP_DIR)
 	dh_auto_configure -D$* -B$*-build -- \
-		--disable-silent-rules \
-		CFLAGS="$(CFLAGS)" \
-		CPPFLAGS="$(CPPFLAGS)" \
-		LDFLAGS="$(LDFLAGS)"
+		--disable-silent-rules
 	>$@
 
 override_dh_auto_build: $(BUILD_STAMPS)
