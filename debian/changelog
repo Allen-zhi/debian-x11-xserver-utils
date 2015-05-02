@@ -1,4 +1,4 @@
-x11-xserver-utils (7.7+4) UNRELEASED; urgency=medium
+x11-xserver-utils (7.7+4) unstable; urgency=medium
 
   * Let uscan verify tarball signatures.
   * iceauth 1.0.7.
@@ -12,7 +12,7 @@ x11-xserver-utils (7.7+4) UNRELEASED; urgency=medium
   * Bump x11proto-core-dev build-dep to 7.0.25.
   * Bump debhelper compat level to 9.
 
- -- Julien Cristau <jcristau@debian.org>  Sat, 02 May 2015 18:30:26 +0200
+ -- Julien Cristau <jcristau@debian.org>  Sat, 02 May 2015 18:50:43 +0200
 
 x11-xserver-utils (7.7+3) unstable; urgency=medium
 
