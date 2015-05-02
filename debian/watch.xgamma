@@ -1,3 +1,4 @@
 #git=git://anongit.freedesktop.org/xorg/app/xgamma
 version=3
+opts="pgpsigurlmangle=s/$/.sig/" \
 http://xorg.freedesktop.org/releases/individual/app/ xgamma-(.*)\.tar\.gz
