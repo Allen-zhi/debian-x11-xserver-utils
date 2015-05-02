@@ -6,6 +6,7 @@ x11-xserver-utils (7.7+4) UNRELEASED; urgency=medium
   * sessreg 1.1.0.
   * xcmsdb 1.0.5.
   * xgamma 1.0.6.
+  * xhost 1.0.7.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 02 May 2015 18:30:26 +0200
 
