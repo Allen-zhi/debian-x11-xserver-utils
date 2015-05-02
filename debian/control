@@ -6,7 +6,7 @@ Build-Depends:
  debhelper (>= 7.0.50),
  dh-autoreconf,
  pkg-config,
- x11proto-core-dev (>= 7.0.17),
+ x11proto-core-dev (>= 7.0.25),
  libx11-dev (>= 2:1.0.0),
  libxaw7-dev (>= 1:1.0.1),
  libxext-dev (>= 1:1.0.0),
