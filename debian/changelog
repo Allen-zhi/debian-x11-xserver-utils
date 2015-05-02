@@ -1,6 +1,7 @@
 x11-xserver-utils (7.7+4) UNRELEASED; urgency=medium
 
   * Let uscan verify tarball signatures.
+  * iceauth 1.0.7.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 02 May 2015 18:30:26 +0200
 
