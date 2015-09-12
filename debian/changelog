@@ -1,3 +1,11 @@
+x11-xserver-utils (7.7+5) unstable; urgency=high
+
+  * High urgency upload for RC bug fix.
+  * sessreg: fix FTBFS with gcc 5 (closes: #778176).  Thanks to Matthias
+    Klose, Daniel Schepler and Aurélien Jarno.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 12 Sep 2015 12:16:27 +0200
+
 x11-xserver-utils (7.7+4) unstable; urgency=medium
 
   * Let uscan verify tarball signatures.
