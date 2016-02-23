@@ -1,10 +1,10 @@
-x11-xserver-utils (7.7+6) UNRELEASED; urgency=medium
+x11-xserver-utils (7.7+6) unstable; urgency=medium
 
   * xrandr 1.5.0.
   * Bump Standards-Version to 3.9.6 (no changes).
   * Update Vcs-* fields to use https and cgit.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 23 Feb 2016 20:47:37 +0100
+ -- Julien Cristau <jcristau@debian.org>  Tue, 23 Feb 2016 20:52:25 +0100
 
 x11-xserver-utils (7.7+5) unstable; urgency=high
 
