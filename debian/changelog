@@ -1,6 +1,7 @@
 x11-xserver-utils (7.7+6) UNRELEASED; urgency=medium
 
   * xrandr 1.5.0.
+  * Bump Standards-Version to 3.9.6 (no changes).
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 23 Feb 2016 20:47:37 +0100
 
