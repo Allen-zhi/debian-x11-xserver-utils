@@ -1,8 +1,8 @@
-x11-xserver-utils (7.7+7) UNRELEASED; urgency=medium
+x11-xserver-utils (7.7+7) unstable; urgency=medium
 
   * Add Breaks on arandr << 0.1.9 (see #815731).
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 25 Feb 2016 16:12:32 +0100
+ -- Julien Cristau <jcristau@debian.org>  Fri, 26 Feb 2016 11:56:46 +0100
 
 x11-xserver-utils (7.7+6) unstable; urgency=medium
 
