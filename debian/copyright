@@ -1,5 +1,5 @@
 The contents of this package were downloaded from
-http://xorg.freedesktop.org/releases/individual/app/
+https://xorg.freedesktop.org/releases/individual/app/
 
 It contains the iceauth, rgb, sessreg, xcmsdb, xgamma, xhost, xmodmap, xrandr,
 xrdb, xrefresh, xset, xsetmode, xsetpointer, xsetroot, xstdcmap, xvidtune
@@ -290,7 +290,7 @@ xmodmap:
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
   DEALINGS IN THE SOFTWARE.
 
-  Copyright 1988, 1998  The Open Group
+  Copyright 1988, 1989, 1990, 1998  The Open Group
 
   Permission to use, copy, modify, distribute, and sell this software and its
   documentation for any purpose is hereby granted without fee, provided that
