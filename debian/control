@@ -39,8 +39,8 @@ Build-Depends:
 # xstdcmap: libxmu-dev, libx11-dev
 # xvidtune: libxaw7-dev, libxxf86vm-dev, libxt-dev
 Standards-Version: 3.9.6
-Vcs-Git: https://anonscm.debian.org/git/pkg-xorg/app/x11-xserver-utils
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-xorg/app/x11-xserver-utils.git
+Vcs-Git: https://salsa.debian.org/xorg-team/app/x11-xserver-utils
+Vcs-Browser: https://salsa.debian.org/xorg-team/app/x11-xserver-utils
 
 Package: x11-xserver-utils
 Architecture: any

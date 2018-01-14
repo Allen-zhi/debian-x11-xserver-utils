@@ -5,6 +5,7 @@ x11-xserver-utils (7.7+8) UNRELEASED; urgency=medium
   * sessreg 1.1.1.
     + 03_sessreg_Pass-P-to-the-preprocessor-when-generating-filenames.diff:
       drop, applied upstream
+  * Update packaging VCS URLs for move to salsa.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 21 Aug 2016 17:49:57 +0200
 
