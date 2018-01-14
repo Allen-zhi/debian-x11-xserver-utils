@@ -1,6 +1,7 @@
 x11-xserver-utils (7.7+8) UNRELEASED; urgency=medium
 
   * Switch all xorg.freedesktop.org URLs in packaging to https.
+  * Add Matt Turner's key to d/u/signing-key.asc.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 21 Aug 2016 17:49:57 +0200
 
