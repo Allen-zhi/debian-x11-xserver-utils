@@ -17,11 +17,11 @@ Not submitted to XFree86.
  sessreg/sessreg.c |  164 ++++++++++++++++++++++++++++++++++++++++++++++++++----
  1 file changed, 152 insertions(+), 12 deletions(-)
 
-Index: x11-xserver-utils/sessreg/sessreg.c
-===================================================================
---- x11-xserver-utils.orig/sessreg/sessreg.c
-+++ x11-xserver-utils/sessreg/sessreg.c
-@@ -88,6 +88,18 @@ static void set_utmpx (struct utmpx *u,
+--- a/sessreg/sessreg.c
++++ b/sessreg/sessreg.c
+@@ -87,10 +87,22 @@ static void set_utmp (struct utmp *u, ch
+ #ifdef USE_UTMPX
+ static void set_utmpx (struct utmpx *u, const char *line, const char *user,
  		       const char *host, time_t date, int addp);
  #endif
  
@@ -40,7 +40,11 @@ Index: x11-xserver-utils/sessreg/sessreg.c
  static int wflag, uflag, lflag;
  static const char *wtmp_file, *utmp_file;
  #ifdef USE_UTMPX
-@@ -399,21 +411,23 @@ set_utmp (struct utmp *u, char *line, ch
+ #ifdef HAVE_UPDWTMPX
+ static const char *wtmpx_file = NULL;
+@@ -436,25 +448,27 @@ set_utmp (struct utmp *u, char *line, ch
+ 		(void) strncpy (u->ut_name, user, sizeof (u->ut_name));
+ 	else
  		memset (u->ut_name, 0, sizeof (u->ut_name));
  #ifdef HAVE_STRUCT_UTMP_UT_ID
  	if (line) {
@@ -76,7 +80,11 @@ Index: x11-xserver-utils/sessreg/sessreg.c
  		memset (u->ut_id, 0, sizeof (u->ut_id));
  #endif
  #ifdef HAVE_STRUCT_UTMP_UT_PID
-@@ -662,3 +676,129 @@ findslot (char *line_name, char *host_na
+ 	if (addp)
+ 		u->ut_pid = getppid ();
+@@ -700,5 +714,131 @@ findslot (char *line_name, char *host_na
+ 		return slot;	/* first slot past current entries */
+ 	else
  		return freeslot;
  }
  #endif
