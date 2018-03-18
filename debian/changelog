@@ -10,6 +10,7 @@ x11-xserver-utils (7.7+8) UNRELEASED; urgency=medium
   * xrdb 1.1.1
   * xrefresh 1.0.6
   * xset 1.2.4
+  * xsetroot 1.1.2
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 21 Aug 2016 17:49:57 +0200
 
