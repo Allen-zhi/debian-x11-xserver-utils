@@ -10,8 +10,6 @@
 # set this to the name of the main shlib's binary package
 PACKAGE = x11-xserver-utils
 
-include debian/xsfbs/xsfbs.mk
-
 # This package contains multiple modules as shipped by upstream. Each module is # contained in a subdirectory in the root dir of the package. You must list each
 # subdirectory explicitly so that the build system knows what to build
 DEF_SUBDIRS=iceauth rgb sessreg xcmsdb xgamma xhost xmodmap xrandr xrdb xrefresh xset xsetmode xsetpointer xsetroot xstdcmap xvidtune
@@ -20,7 +18,7 @@ CONFIG_STAMPS = $(addprefix $(STAMP_DIR)/configure-, $(SUBDIRS))
 BUILD_STAMPS = $(addprefix $(STAMP_DIR)/build-,$(SUBDIRS))
 
 %:
-	dh $@ --with autoreconf,quilt --parallel
+	dh $@ --with quilt
 
 debian/autoreconf:
 	echo $(SUBDIRS) > $@
@@ -56,7 +54,10 @@ override_dh_auto_install:
 	done
 
 override_dh_install:
-	dh_install -Xrgb.txt --fail-missing
+	dh_install -Xrgb.txt
+
+override_dh_missing:
+	dh_missing --fail-missing
 
 .PHONY: get-tarballs
 get-tarballs: $(addprefix get-tarball-,$(SUBDIRS))

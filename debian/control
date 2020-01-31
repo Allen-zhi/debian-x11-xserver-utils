@@ -3,8 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Build-Depends:
- debhelper (>= 9),
- dh-autoreconf,
+ debhelper-compat (= 12),
  pkg-config,
  x11proto-core-dev (>= 7.0.25),
  libx11-dev (>= 2:1.0.0),
