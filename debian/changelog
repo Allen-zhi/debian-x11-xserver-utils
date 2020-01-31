@@ -5,6 +5,7 @@ x11-xserver-utils (7.7+9) UNRELEASED; urgency=medium
   * xmodmap 1.0.10.
   * xrandr 1.5.1. (Closes: #784324)
   * xrdb 1.2.0.
+  * xstdcmap 1.0.4.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Fri, 31 Jan 2020 13:58:50 +0200
 
