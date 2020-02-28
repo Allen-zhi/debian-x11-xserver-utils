@@ -19,9 +19,7 @@ Not submitted to XFree86.
 
 --- a/sessreg/sessreg.c
 +++ b/sessreg/sessreg.c
-@@ -87,10 +87,22 @@ static void set_utmp (struct utmp *u, ch
- #ifdef USE_UTMPX
- static void set_utmpx (struct utmpx *u, const char *line, const char *user,
+@@ -89,6 +89,18 @@ static void set_utmpx (struct utmpx *u,
  		       const char *host, time_t date, int addp);
  #endif
  
@@ -40,11 +38,7 @@ Not submitted to XFree86.
  static int wflag, uflag, lflag;
  static const char *wtmp_file, *utmp_file;
  #ifdef USE_UTMPX
- #ifdef HAVE_UPDWTMPX
- static const char *wtmpx_file = NULL;
-@@ -436,25 +448,27 @@ set_utmp (struct utmp *u, char *line, ch
- 		(void) strncpy (u->ut_name, user, sizeof (u->ut_name));
- 	else
+@@ -452,21 +464,23 @@ set_utmp (struct utmp *u, char *line, ch
  		memset (u->ut_name, 0, sizeof (u->ut_name));
  #ifdef HAVE_STRUCT_UTMP_UT_ID
  	if (line) {
@@ -64,7 +58,7 @@ Not submitted to XFree86.
 -			i -= sizeof (u->ut_id);
 -		else
 -			i = 0;
--		(void) strncpy (u->ut_id, line + i, sizeof (u->ut_id));
+-		safe_strncpy (u->ut_id, line + i, sizeof (u->ut_id));
 +		ub4 h;
 +		u->ut_id[0]=':';
 +		h = hash(line, strlen(line),0x9e3779b9);
@@ -76,15 +70,11 @@ Not submitted to XFree86.
 +		 * Clearing ut_id may result in race conditions leading to corrupted
 +		 * utmp entries and and potential security holes.
 +		 */
-+		/* TODO: CHECK this  */
++	        /* TODO: CHECK this  */
  		memset (u->ut_id, 0, sizeof (u->ut_id));
  #endif
  #ifdef HAVE_STRUCT_UTMP_UT_PID
- 	if (addp)
- 		u->ut_pid = getppid ();
-@@ -700,5 +714,131 @@ findslot (char *line_name, char *host_na
- 		return slot;	/* first slot past current entries */
- 	else
+@@ -716,3 +730,129 @@ findslot (char *line_name, char *host_na
  		return freeslot;
  }
  #endif
