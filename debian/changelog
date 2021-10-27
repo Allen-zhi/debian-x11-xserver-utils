@@ -1,16 +1,16 @@
-x11-xserver-utils (7.7+9) UNRELEASED; urgency=medium
+x11-xserver-utils (7.7+9) unstable; urgency=medium
 
   * sessreg 1.1.2.
   * xhost 1.0.8.
   * xmodmap 1.0.10.
-  * xrandr 1.5.1. (Closes: #784324)
+  * xrandr 1.5.1. (Closes: #784324, #863666)
   * xstdcmap 1.0.4.
   * Use debhelper 12.
   * patches: Refreshed.
   * control: Bump policy to 4.5.0.
   * xrdb 1.2.1
 
- -- Timo Aaltonen <tjaalton@debian.org>  Fri, 31 Jan 2020 13:58:50 +0200
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 27 Oct 2021 10:29:52 +0300
 
 x11-xserver-utils (7.7+8) unstable; urgency=medium
 
